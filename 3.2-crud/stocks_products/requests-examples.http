@@ -1,0 +1,95 @@
+# примеры API-запросов
+
+#@baseUrl = http://localhost:8000/api/v1
+
+# создание продукта
+POST http://localhost:8000/api/v1/products/
+Content-Type: application/json
+
+{
+  "title": "Петрушка",
+  "description": "Петрушка"
+}
+
+###
+
+# получение продуктов
+GET http://localhost:8000/api/v1/products/
+Content-Type: application/json
+
+###
+
+# обновление продукта
+PATCH  http://localhost:8000/api/v1/products/1/
+Content-Type: application/json
+
+{
+  "description": "Самые сочные и ароматные помидорки"
+}
+
+###
+
+# удаление продукта
+DELETE http://localhost:8000/api/v1/products/1/
+Content-Type: application/json
+
+###
+
+# поиск продуктов по названию и описанию
+GET http://localhost:8000/api/v1/products/?search=помидор
+Content-Type: application/json
+
+###
+
+# создание склада
+POST http://localhost:8000/api/v1/stocks/
+Content-Type: application/json
+
+{
+  "address": "Второй склад",
+  "positions": [
+    {
+      "product": 4,
+      "quantity": 250,
+      "price": 120.50
+    },
+    {
+      "product": 3,
+      "quantity": 100,
+      "price": 180
+    }
+  ]
+}
+
+###
+
+# обновляем записи на складе
+PATCH http://localhost:8000/api/v1/stocks/6/
+Content-Type: application/json
+
+{
+  "positions": [
+    {
+      "product": 2,
+      "quantity": 100,
+      "price": 130.80
+    },
+    {
+      "product": 3,
+      "quantity": 243,
+      "price": 145
+    }
+  ]
+}
+
+###
+
+# поиск складов, где есть определенный продукт
+GET http://localhost:8000/api/v1/stocks/?products=4
+Content-Type: application/json
+
+###
+
+# поиск складов, где есть определенный продукт
+GET http://localhost:8000/api/v1/stocks/?search=помид
+Content-Type: application/json
