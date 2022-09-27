@@ -1,0 +1,52 @@
+# примеры API-запросов
+
+#@baseUrl = http://localhost:8000/api
+
+#токены не валидные, только для примера
+#admin 1b57128906e0c7b00471e4bf966c4e44f3321c6d
+#admin2 e855d6102fbd9a3019ee9af88d1e8adf79f94b97
+
+# получение объявлений
+GET http://localhost:8000/api/advertisements/
+Content-Type: application/json
+
+###
+
+# создание объявления
+POST http://localhost:8000/api/advertisements/
+Content-Type: application/json
+Authorization: Token e855d6102fbd9a3019ee9af88d1e8adf79f94b97
+
+{
+  "title": "и еще и опять и еще и Снова И Еще Табуретка IKEA",
+  "description": "Не срочно"
+}
+
+###
+
+# попытка поменять объявление
+PATCH http://localhost:8000/api/advertisements/15/
+Content-Type: application/json
+Authorization: Token e855d6102fbd9a3019ee9af88d1e8adf79f94b97
+
+{
+  "status": "CLOSED"
+}
+
+###
+
+# фильтрация по создателю
+GET http://localhost:8000/api/advertisements/?creator=2
+Content-Type: application/json
+
+###
+
+# фильтрация по дате
+GET http://localhost:8000/api/advertisements/?created_at_before=2022-10-01
+Content-Type: application/json
+
+###
+
+DELETE  http://localhost:8000/api/advertisements/15/
+Content-Type: application/json
+Authorization: Token 1b57128906e0c7b00471e4bf966c4e44f3321c6d
