@@ -46,7 +46,7 @@ POST http://localhost:8000/api/v1/stocks/
 Content-Type: application/json
 
 {
-  "address": "Второй склад",
+  "address": "Третий склад",
   "positions": [
     {
       "product": 4,
@@ -64,7 +64,7 @@ Content-Type: application/json
 ###
 
 # обновляем записи на складе
-PATCH http://localhost:8000/api/v1/stocks/6/
+PATCH http://localhost:8000/api/v1/stocks/10/
 Content-Type: application/json
 
 {
