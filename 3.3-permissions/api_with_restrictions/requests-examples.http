@@ -30,7 +30,7 @@ Content-Type: application/json
 Authorization: Token e855d6102fbd9a3019ee9af88d1e8adf79f94b97
 
 {
-  "status": "CLOSED"
+  "status": "OPEN"
 }
 
 ###
